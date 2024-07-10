@@ -1,16 +1,17 @@
 import React from "react";
 import CategoreisData from "@/data/categories.json";
 import { Category } from "@/types/category";
+import SingleCategoryItem from "./single-card-item";
 
 type Props = {};
 
 const CategoriesList = (props: Props) => {
   return (
-    <section>
+    <section className="grid grid-cols-6 gap-5 mt-5">
       {(CategoreisData as Category[]).map((category, index) => {
         return (
           <div key={index}>
-            <h3>{category.name}</h3>
+            <SingleCategoryItem category={category} />
           </div>
         );
       })}
