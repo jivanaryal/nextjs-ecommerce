@@ -8,7 +8,7 @@ type Props = {};
 
 export default function Navbar({}: Props) {
   return (
-    <nav className="flex  items-center justify-around h-16 border-b-[1px]  shadow font-sans ">
+    <nav className="flex bg-[#F85606] text-white  items-center justify-around h-16 border-b-[1px]  shadow font-sans ">
       <section className="text-2xl ">logo</section>
       <ul className="flex gap-5 text-lg">
         <li>

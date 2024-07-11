@@ -7,7 +7,7 @@ type Props = {};
 
 export default function ProductsList({}: Props) {
   return (
-    <section className="grid grid-cols-3 gap-10">
+    <section className="grid grid-cols-4 gap-10 ">
       {(productData as TProduct[]).map((product, ind) => {
         return <SingleProductCard key={ind} product={product} />;
       })}
