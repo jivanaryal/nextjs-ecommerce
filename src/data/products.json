@@ -11,16 +11,17 @@
     },
     "stockQuantity": 15,
     "images": [
-      "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1453486030486-0a5ffcd82cd9?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
     ],
     "reviews": [
       {
         "username": "Hari Prasad",
-        "rating": 4.5,
+        "rating": 3.2,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   },
   {
     "id": "2",
@@ -34,16 +35,17 @@
     },
     "stockQuantity": 15,
     "images": [
-      "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1603184017968-953f59cd2e37?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
     ],
     "reviews": [
       {
         "username": "Hari Prasad",
-        "rating": 4.5,
+        "rating": 2.7,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   },
   {
     "id": "3",
@@ -57,16 +59,17 @@
     },
     "stockQuantity": 15,
     "images": [
-      "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1581492129911-5eb1fb620f67?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
     ],
     "reviews": [
       {
         "username": "Hari Prasad",
-        "rating": 4.5,
+        "rating": 3.1,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   },
   {
     "id": "4",
@@ -80,16 +83,17 @@
     },
     "stockQuantity": 15,
     "images": [
-      "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1547573854-74d2a71d0826?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
     ],
     "reviews": [
       {
         "username": "Hari Prasad",
-        "rating": 4.5,
+        "rating": 4.9,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   },
   {
     "id": "5",
@@ -103,15 +107,16 @@
     },
     "stockQuantity": 15,
     "images": [
-      "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
     ],
     "reviews": [
       {
         "username": "Hari Prasad",
-        "rating": 4.5,
+        "rating": 4.6,
         "message": "Very nice product"
       }
-    ]
+    ],
+    "avgRating": 4.7
   }
 ]

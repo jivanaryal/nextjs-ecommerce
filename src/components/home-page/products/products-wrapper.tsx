@@ -6,7 +6,7 @@ type Props = {};
 export default function ProductsWrapper({}: Props) {
   return (
     <section className="container ">
-      <h2 className="text-2xl font-bold">Out latest Products</h2>
+      <h2 className="text-2xl font-bold my-10">Out latest Products</h2>
 
       <ProductsList />
     </section>

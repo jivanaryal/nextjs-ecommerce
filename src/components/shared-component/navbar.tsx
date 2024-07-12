@@ -30,8 +30,10 @@ export default function Navbar({}: Props) {
         />
       </section>
       <section className="space-x-3 flex items-center text-base">
-        <Button>Login</Button>
-        <Button variant={"outline"} size={"icon"}>
+        <Button variant={"outline"} className="bg-transparent">
+          Login
+        </Button>
+        <Button variant={"outline"} className="bg-transparent" size={"icon"}>
           <FaShoppingCart size={24} />
         </Button>
       </section>

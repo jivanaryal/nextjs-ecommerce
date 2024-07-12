@@ -11,4 +11,5 @@ export type TProduct = {
   discount: number;
   images: string[];
   reviews: TReview[];
+  avgRating: number;
 };
