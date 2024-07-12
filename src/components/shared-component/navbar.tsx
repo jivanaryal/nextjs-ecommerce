@@ -11,13 +11,13 @@ export default function Navbar({}: Props) {
     <nav className="flex bg-[#F85606] text-white  items-center justify-around h-16 border-b-[1px]  shadow font-sans ">
       <section className="text-2xl ">logo</section>
       <ul className="flex gap-5 text-lg">
-        <li>
+        <li className="hover:text-gray-300  ">
           <Link href={"/"}>Home</Link>
         </li>
-        <li>
+        <li className="hover:text-gray-300">
           <Link href={"/"}>Products</Link>
         </li>
-        <li>
+        <li className="hover:text-gray-300">
           <Link href={"/"}>Contact</Link>
         </li>
       </ul>
