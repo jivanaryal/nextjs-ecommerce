@@ -15,7 +15,7 @@ export default function Navbar({}: Props) {
           <Link href={"/"}>Home</Link>
         </li>
         <li className="hover:text-gray-300">
-          <Link href={"/"}>Products</Link>
+          <Link href={"/products"}>Products</Link>
         </li>
         <li className="hover:text-gray-300">
           <Link href={"/"}>Contact</Link>
