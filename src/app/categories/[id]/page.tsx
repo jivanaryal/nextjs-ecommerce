@@ -1,8 +1,6 @@
 import React from "react";
 import productData from "@/data/products.json";
-import { PathParamsContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime";
 import { TProduct } from "@/types/product";
-import { equal } from "assert";
 import SingleProductCard from "@/components/home-page/products/single-product-card";
 
 type Props = {

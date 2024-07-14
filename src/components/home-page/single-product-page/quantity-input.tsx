@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 type Props = {
@@ -17,7 +17,18 @@ const QauntityInput = ({ stockQuantity }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const quantity = Number(searchParams.get(SELECTED_QUANITTY) ?? 1);
+  // const quantity = Number(searchParams.get(SELECTED_QUANITTY) ?? 1);
+
+  const quantity = Math.max(
+    1,
+    Math.min(stockQuantity, Number(searchParams.get(SELECTED_QUANITTY)))
+  );
+
+  useEffect(() => {
+    router.push(
+      pathname + "?" + createQueryString(SELECTED_QUANITTY, quantity.toString())
+    );
+  }, [quantity]);
 
   const createQueryString = useCallback(
     (name: string, value: string) => {

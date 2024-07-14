@@ -7,7 +7,7 @@ import Image from "next/image";
 import { getDiscountedPrice } from "@/utils/getDiscountedPrice";
 
 type Props = {
-  variant: string;
+  variant?: "similar-product" | "all-product";
 };
 
 export default function ProductsList({ variant }: Props) {
