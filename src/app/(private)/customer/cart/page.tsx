@@ -1,4 +1,5 @@
 import CartItemTable from "@/components/cart/cart-item-table";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 
@@ -43,6 +44,9 @@ function OrderSumamry() {
           <section className="flex justify-between">
             <h4>Delivery Fee</h4>
             <span>Rs 110</span>
+          </section>
+          <section>
+            <Button>Proceed to checkout</Button>
           </section>
         </CardContent>
       </CardHeader>

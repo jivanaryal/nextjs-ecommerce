@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { FaShoppingCart } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
+import { signIn, signOut } from "next-auth/react";
 
 type Props = {};
 
@@ -33,8 +35,22 @@ export default function Navbar({}: Props) {
         <Button variant={"outline"} className="bg-transparent">
           Login
         </Button>
-        <Button variant={"outline"} className="bg-transparent" size={"icon"}>
-          <FaShoppingCart size={24} />
+        <Button
+          variant={"outline"}
+          className="bg-transparent"
+          onClick={() => signOut()}
+        >
+          signout
+        </Button>
+        <Button
+          variant={"outline"}
+          className="bg-transparent"
+          size={"icon"}
+          asChild
+        >
+          <Link href={"/customer/cart"}>
+            <FaShoppingCart size={24} />
+          </Link>
         </Button>
       </section>
     </nav>
