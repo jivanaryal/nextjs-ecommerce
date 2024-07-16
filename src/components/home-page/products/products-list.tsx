@@ -42,8 +42,9 @@ function SimilarProduct() {
                 <Image
                   src={product.images[0]}
                   alt={product.name}
-                  height={200}
-                  width={100}
+                  height={0}
+                  width={0}
+                  sizes="100vw"
                   className="w-full object-cover max-h-72 rounded hover:shadow-sm"
                 />
               </CardHeader>

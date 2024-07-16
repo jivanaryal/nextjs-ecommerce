@@ -20,8 +20,9 @@ export default function SingleProductCard({ product }: Props) {
           <Image
             src={product.images[0]}
             alt={product.name}
-            height={200}
-            width={100}
+            height={0}
+            width={0}
+            sizes="100vw"
             className="w-full object-cover max-h-40 rounded hover:shadow-sm"
           />
           <CardTitle className=" line-clamp-2 text-md leading-5">
