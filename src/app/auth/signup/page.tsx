@@ -31,7 +31,7 @@ type Props = {
   callbackUrl: string;
 };
 
-const LoginPage = (props: Props) => {
+const SignupPage = (props: Props) => {
   const form = useForm<TsignUpFormSchema>({
     resolver: zodResolver(signUpFormSchema),
     defaultValues: SignUpFormDefaultValues,
@@ -74,4 +74,4 @@ const LoginPage = (props: Props) => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;
