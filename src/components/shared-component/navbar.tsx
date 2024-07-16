@@ -35,6 +35,12 @@ export default function Navbar({}: Props) {
         <Button variant={"outline"} className="bg-transparent">
           Login
         </Button>
+        <Button variant={"outline"} className="bg-transparent" asChild>
+          <Link href={"/auth/signup"}>
+            {" "}
+            <div>Signup</div>{" "}
+          </Link>
+        </Button>
         <Button
           variant={"outline"}
           className="bg-transparent"
