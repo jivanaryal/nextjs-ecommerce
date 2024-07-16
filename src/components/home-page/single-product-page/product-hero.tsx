@@ -1,9 +1,10 @@
+"use client";
 import RatingStars from "@/components/shared-component/rating-stars";
 import { Button } from "@/components/ui/button";
 import { TProduct } from "@/types/product";
 import { getDiscountedPrice } from "@/utils/getDiscountedPrice";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import QauntityInput from "./quantity-input";
 import ReviewProduct from "./review-product";
@@ -13,7 +14,9 @@ type Props = {
 };
 
 const SingleProductHero = ({ product }: Props) => {
-  const primaryImage = product.images[0];
+  const [firstImage, setFirstImage] = useState(0);
+
+  const primaryImage = product.images[firstImage];
   return (
     <main className="flex bg-[#FFFFFF]    pt-4  px-10 border-2  border-none  justify-center  outline-none     gap-10 ">
       <section className="">
@@ -35,6 +38,7 @@ const SingleProductHero = ({ product }: Props) => {
                 alt={product.name}
                 width={100}
                 height={40}
+                onMouseEnter={() => setFirstImage(index)}
                 className=" object-cover max-w-[200px] max-h-[80px] rounded "
               />
 
