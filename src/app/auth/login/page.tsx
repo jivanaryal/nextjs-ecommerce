@@ -15,14 +15,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 
 import { Input } from "@/components/ui/input";
 import {
+  SignInFormDefaultValues,
   signInFormField,
   signInFormSchema,
   TsignInFormSchema,
 } from "@/models/sign-in.model";
+import { signIn } from "next-auth/react";
 
 type Props = {
   callbackUrl: string;
@@ -31,14 +33,16 @@ type Props = {
 const LoginPage = (props: Props) => {
   const form = useForm<TsignInFormSchema>({
     resolver: zodResolver(signInFormSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: SignInFormDefaultValues,
   });
 
   async function onSubmit(values: TsignInFormSchema) {
-    console.log(values);
+    await signIn("credentials", {
+      redirect: true,
+      email: values.email,
+      password: values.password,
+      callbackUrl: props.callbackUrl ?? "http://localhost:3000/customer/cart",
+    });
   }
 
   return (
@@ -55,12 +59,14 @@ const LoginPage = (props: Props) => {
                   <FormLabel>{formfield.label}</FormLabel>
                   <FormControl>
                     <Input
+                      {...field}
                       placeholder={formfield.placeholder}
                       required={formfield.required}
                       name={formfield.name}
                     />
                   </FormControl>
                   <FormDescription>{formfield.description}</FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
             ></FormField>
