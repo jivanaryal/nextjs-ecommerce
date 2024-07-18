@@ -3,6 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -38,12 +40,18 @@ const LoginPage = (props: Props) => {
   });
 
   async function onSubmit(values: TsignInFormSchema) {
-    await signIn("credentials", {
-      redirect: true,
-      email: values.email,
-      password: values.password,
-      callbackUrl: props.callbackUrl ?? "http://localhost:3000/customer/cart",
-    });
+    try {
+      await signIn("credentials", {
+        redirect: true,
+        email: values.email,
+        password: values.password,
+        callbackUrl: props.callbackUrl ?? "http://localhost:3000/customer/cart",
+      });
+      toast.success("jay shree ream");
+    } catch (error) {
+      toast.error("error");
+      console.log("jivan");
+    }
   }
 
   return (
@@ -76,10 +84,12 @@ const LoginPage = (props: Props) => {
                           placeholder={formfield.placeholder}
                           required={formfield.required}
                           name={formfield.name}
+                          type={formfield.type}
                         />
                       </FormControl>
                       <FormDescription>{formfield.description}</FormDescription>
                       <FormMessage />
+                      <ToastContainer />
                     </FormItem>
                   )}
                 ></FormField>

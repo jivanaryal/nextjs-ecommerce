@@ -72,6 +72,7 @@ const SignupPage = (props: Props) => {
                           placeholder={formfield.placeholder}
                           required={formfield.required}
                           name={formfield.name}
+                          type={formfield.type}
                         />
                       </FormControl>
                       <FormDescription>{formfield.description}</FormDescription>
