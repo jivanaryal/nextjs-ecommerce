@@ -1,16 +1,13 @@
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  req: NextRequest,
-  {
-    params,
-  }: {
-    params: {
-      userId: string;
-    };
-  }
-) {
+type Props = {
+  params: {
+    userId: string;
+  };
+};
+
+export async function GET(req: NextRequest, { params }: Props) {
   const id = +params.userId;
   if (isNaN(id)) {
     return new NextResponse("please provide an integer value", { status: 400 });
