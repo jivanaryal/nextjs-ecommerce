@@ -11,10 +11,7 @@ type Props = {
   params: {
     id: string;
   };
-  // searchParams:{
-  //     query: string;
-  //     page:string;
-  // }
+  
 };
 
 const SingleProductPage = ({ params: { id } }: Props) => {
@@ -25,6 +22,7 @@ const SingleProductPage = ({ params: { id } }: Props) => {
   if (product === undefined) notFound();
   return (
     <section className="w-9/12 mx-auto ">
+      <h1>hello world</h1>
       <SingleProductHero product={product} />
       <ProductDescription product={product} />
       <ProductReviews product={product} />
