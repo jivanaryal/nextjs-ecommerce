@@ -2,7 +2,7 @@ import { EInputType, TFormField } from "@/types/form-field";
 import { z } from "zod";
 export const signUpFormSchema = z
   .object({
-    fullName: z
+    fullname: z
       .string()
       .min(3, { message: "Username must be at least 3 characters" }),
     email: z.string().email({ message: "enter the valid email address" }),
@@ -21,7 +21,7 @@ export const signUpFormSchema = z
 export type TsignUpFormSchema = z.infer<typeof signUpFormSchema>; //form field ma
 
 export const SignUpFormDefaultValues: Partial<TsignUpFormSchema> = {
-  fullName: "",
+  fullname: "",
   email: "",
   password: "",
   confirmPassword: "",
@@ -30,7 +30,7 @@ export const SignUpFormDefaultValues: Partial<TsignUpFormSchema> = {
 export const signUpFormField: TFormField<TsignUpFormSchema>[] = [
   {
     label: "Full Name",
-    name: "fullName",
+    name: "fullname",
     placeholder: "Eg. jivan",
     type: EInputType.TEXT,
     required: true,

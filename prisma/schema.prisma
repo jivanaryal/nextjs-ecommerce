@@ -18,3 +18,9 @@ model Student {
   email String  @unique
   password  String
 }
+
+model Category {
+  id   Int @id @default(autoincrement())
+  ImageUrl String
+  name String
+}

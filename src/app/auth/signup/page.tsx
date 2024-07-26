@@ -40,6 +40,14 @@ const SignupPage = (props: Props) => {
 
   async function onSubmit(values: TsignUpFormSchema) {
     console.log(values);
+
+    await fetch("/api/students", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
   }
 
   return (
