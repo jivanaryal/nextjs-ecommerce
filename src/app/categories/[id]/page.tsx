@@ -26,7 +26,7 @@ const SingleCategoryPage = ({ params }: Props) => {
           })
         ) : (
           <div className=" w-full font-mono text-red-500">
-            there is no product available to display
+            there is no product available to display back to homepage
           </div>
         )}
       </section>
