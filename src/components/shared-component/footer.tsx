@@ -9,6 +9,8 @@ export default function Footer({}: Props) {
       <p>My Ecommerce &copy; 2024</p>
       <Link href="/">Pricacy Policy</Link>
       <Link href="/">Terms & Agreement</Link>
+
+      <a href="https://jivanaryal.com.np">Portfolio</a>
     </footer>
   );
 }
