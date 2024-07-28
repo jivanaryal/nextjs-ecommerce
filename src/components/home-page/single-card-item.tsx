@@ -8,6 +8,7 @@ type Props = {
 };
 
 export default function SingleCategoryItem({ category }: Props) {
+  console.log(category.ImageUrl);
   return (
     <Card>
       <CardHeader>

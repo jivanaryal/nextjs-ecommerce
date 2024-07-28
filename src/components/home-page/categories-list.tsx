@@ -6,10 +6,21 @@ import Link from "next/link";
 
 type Props = {};
 
-const CategoriesList = (props: Props) => {
+export async function getCategory() {
+  const res = await fetch("http:localhost:3000/api/categories");
+  if (!res.ok) {
+    throw new Error("failed to fetched data");
+  }
+
+  return res.json();
+}
+
+const CategoriesList = async (props: Props) => {
+  const data = await getCategory();
+
   return (
     <section className="grid grid-cols-6 gap-5 mt-5">
-      {(CategoreisData as Category[]).map((category, index) => {
+      {(data as Category[]).map((category, index) => {
         return (
           <Link href={`/categories/${category.name}`} key={index}>
             {" "}

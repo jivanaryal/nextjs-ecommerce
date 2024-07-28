@@ -1,5 +1,4 @@
 import React from "react";
-import productData from "@/data/products.json";
 import { TProduct } from "@/types/product";
 import SingleProductCard from "./single-product-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,16 +9,31 @@ type Props = {
   variant?: "similar-product" | "all-product";
 };
 
-export default function ProductsList({ variant }: Props) {
+export async function getData(): Promise<TProduct[]> {
+  const res = await fetch("http://localhost:3000/api/products");
+  if (!res.ok) {
+    throw new Error("can't able to fetch the product");
+  }
+
+  return res.json();
+}
+
+type ProductListProps = {
+  productData: TProduct[];
+};
+
+export default async function ProductsList({ variant }: Props) {
+  const productData = await getData();
+
   return (
     <section>
       {variant === "similar-product" ? (
-        <SimilarProduct />
+        <SimilarProduct productData={productData} />
       ) : variant === "all-product" ? (
-        <AllProduct />
+        <AllProduct productData={productData} />
       ) : (
         <section className="grid grid-cols-4 gap-10 ">
-          {(productData as TProduct[]).map((product, ind) => {
+          {productData.map((product, ind) => {
             return <SingleProductCard key={ind} product={product} />;
           })}
         </section>
@@ -28,54 +42,47 @@ export default function ProductsList({ variant }: Props) {
   );
 }
 
-function SimilarProduct() {
+function SimilarProduct({ productData }: ProductListProps) {
   return (
     <section className="space-y-10">
-      {productData.map((product, ind) => {
-        return (
-          <section key={ind}>
-            <Card
-              className="rounded-lg grid grid-cols-2 items-center  overflow-hidden  hover:scale-100 hover:shdaow-lg hover:shadow-gray-500 transition-all duration-300 delay-50 "
-              title={product.name}
-            >
-              <CardHeader>
-                <Image
-                  src={product.images[0]}
-                  alt={product.name}
-                  height={0}
-                  width={0}
-                  sizes="100vw"
-                  className="w-full object-cover max-h-72 rounded hover:shadow-sm"
-                />
-              </CardHeader>
-
-              <CardContent>
-                <CardTitle className=" line-clamp-2 text-md leading-5">
-                  {product.name}
-                </CardTitle>
-                <p className="text-blue-500 text-lg font-black">
-                  $ {getDiscountedPrice(product.price, product.discount)}
+      {productData.map((product, ind) => (
+        <section key={ind}>
+          <Card
+            className="rounded-lg grid grid-cols-2 items-center overflow-hidden hover:scale-100 hover:shadow-lg hover:shadow-gray-500 transition-all duration-300 delay-50"
+            title={product.name}
+          >
+            <CardHeader>
+              <Image
+                src={product.images[0]}
+                alt={product.name}
+                height={0}
+                width={0}
+                sizes="100vw"
+                className="w-full object-cover max-h-72 rounded hover:shadow-sm"
+              />
+            </CardHeader>
+            <CardContent>
+              <CardTitle className="line-clamp-2 text-md leading-5">
+                {product.name}
+              </CardTitle>
+              <p className="text-blue-500 text-lg font-black">
+                $ {getDiscountedPrice(product.price, product.discount)}
+              </p>
+              <div className="">
+                <p className="text-gray-500 line-through mr-6 flex">
+                  $ {product.price}
                 </p>
-
-                <div className="">
-                  <p className="text-gray-500 line-through  mr-6 flex ">
-                    $ {product.price}
-                  </p>
-                  <span>{product.discount} %</span>
-                </div>
-                {/* <button className="px-1 py-1 rounded border-2 outline-none  bg-blue-500 text-white ">
-            buy now
-          </button> */}
-              </CardContent>
-            </Card>
-          </section>
-        );
-      })}
+                <span>{product.discount} %</span>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      ))}
     </section>
   );
 }
 
-function AllProduct() {
+function AllProduct({ productData }: ProductListProps) {
   return (
     <section className="space-y-10 p-8 bg-gray-100">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">

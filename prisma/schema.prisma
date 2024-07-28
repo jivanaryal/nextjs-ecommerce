@@ -12,15 +12,40 @@ model User {
   email String  @unique
   name  String?
 }
+
 model Student {
-  id    Int     @id @default(autoincrement())
-  fullname String
-  email String  @unique
+  id        Int     @id @default(autoincrement())
+  fullname  String
+  email     String  @unique
   password  String
 }
 
 model Category {
-  id   Int @id @default(autoincrement())
-  ImageUrl String
-  name String
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  ImageUrl  String
+  products  Product[]
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  username  String
+  rating    Int
+  message   String
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Product {
+  id             Int       @id @default(autoincrement())
+  name           String
+  description    String
+  price          Float
+  categoryId     Int
+  category       Category  @relation(fields: [categoryId], references: [id])
+  stockQuantity  Int
+  discount       Float
+  images         String[]
+  reviews        Review[]
+  avgRating      Float
 }
