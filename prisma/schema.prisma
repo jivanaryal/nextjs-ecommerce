@@ -25,7 +25,7 @@ model Category {
   name      String    @unique
   ImageUrl  String
   products  Product[]
-}
+} 
 
 model Review {
   id        Int      @id @default(autoincrement())

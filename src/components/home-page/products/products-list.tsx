@@ -4,12 +4,13 @@ import SingleProductCard from "./single-product-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { getDiscountedPrice } from "@/utils/getDiscountedPrice";
+import { cookies } from "next/headers";
 
 type Props = {
   variant?: "similar-product" | "all-product";
 };
 
-export async function getData(): Promise<TProduct[]> {
+export async function getProductData(): Promise<TProduct[]> {
   const res = await fetch("http://localhost:3000/api/products");
   if (!res.ok) {
     throw new Error("can't able to fetch the product");
@@ -23,7 +24,11 @@ type ProductListProps = {
 };
 
 export default async function ProductsList({ variant }: Props) {
-  const productData = await getData();
+  const productData = await getProductData();
+  console.log(
+    productData,
+    "something is offffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  );
 
   return (
     <section>

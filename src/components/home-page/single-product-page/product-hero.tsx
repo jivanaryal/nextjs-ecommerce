@@ -14,6 +14,7 @@ type Props = {
 };
 
 const SingleProductHero = ({ product }: Props) => {
+  console.log(product);
   const [firstImage, setFirstImage] = useState(0);
 
   const primaryImage = product.images[firstImage];
