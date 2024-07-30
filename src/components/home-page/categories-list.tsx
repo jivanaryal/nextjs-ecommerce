@@ -7,7 +7,9 @@ import Link from "next/link";
 type Props = {};
 
 export async function getCategory() {
-  const res = await fetch("http:localhost:3000/api/categories");
+  const res = await fetch("http:localhost:3000/api/categories", {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("failed to fetched data");
   }

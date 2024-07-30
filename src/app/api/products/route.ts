@@ -3,7 +3,11 @@ import { TProduct } from "@/types/product";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const data = await prisma.product.findMany();
+  const data = await prisma.product.findMany({
+    include: {
+      category: true,
+    },
+  });
 
   return NextResponse.json(data);
 }

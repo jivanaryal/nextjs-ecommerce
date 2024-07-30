@@ -1,7 +1,8 @@
 import React from "react";
-import productData from "@/data/products.json";
+// import productData from "@/data/products.json";
 import { TProduct } from "@/types/product";
 import SingleProductCard from "@/components/home-page/products/single-product-card";
+import { getProductData } from "@/components/home-page/products/products-list";
 
 type Props = {
   params: {
@@ -9,8 +10,11 @@ type Props = {
   };
 };
 
-const SingleCategoryPage = ({ params }: Props) => {
+const SingleCategoryPage = async ({ params }: Props) => {
+  const productData = await getProductData();
+
   const filterCategory = productData.filter((product) => {
+    console.log(product.category.name);
     return product.category.name === params.id;
   });
   console.log(filterCategory);

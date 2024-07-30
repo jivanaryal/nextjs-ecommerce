@@ -1,10 +1,14 @@
 import { Awaitable, NextAuthOptions, RequestInternal, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+interface CustomerUser extends User {
+  email: string;
+  password: string;
+}
+
 export const authOption: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      // id:'1',
       name: "Credentials",
       credentials: {
         email: {
@@ -12,29 +16,26 @@ export const authOption: NextAuthOptions = {
           type: "email",
           placeholder: "Enter your email",
         },
-        password: { label: "Password", type: "password" },
+        password: {
+          label: "Password",
+          type: "password",
+          placeholder: "Enter you password",
+        },
       },
 
-      async authorize(credentials) {
-        const user = [
-          {
-            id: "1",
-            email: "jivan@gmail.com",
-            password: "123456",
-          },
-        ];
+      async authorize(credentials, req) {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/loggedin`, {
+          method: "POST",
+          body: JSON.stringify(credentials),
+          headers: { "Content-Type": "application/json" },
+        });
+        const user = await res.json();
 
-        const foundUser = user.find(
-          (user) => user.email === credentials?.email
-        );
+        if (res.status !== 200 || !user) {
+          return null;
+        }
 
-        if (!foundUser) return null;
-
-        const isPasswordMatch = foundUser.password === credentials?.password;
-
-        if (!isPasswordMatch) return null;
-
-        return foundUser;
+        return user;
       },
     }),
   ],

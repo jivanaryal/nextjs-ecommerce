@@ -11,7 +11,9 @@ type Props = {
 };
 
 export async function getProductData(): Promise<TProduct[]> {
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("http://localhost:3000/api/products", {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("can't able to fetch the product");
   }
@@ -25,10 +27,6 @@ type ProductListProps = {
 
 export default async function ProductsList({ variant }: Props) {
   const productData = await getProductData();
-  console.log(
-    productData,
-    "something is offffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-  );
 
   return (
     <section>
