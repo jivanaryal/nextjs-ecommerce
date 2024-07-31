@@ -56,6 +56,7 @@ const SingleProductHero = ({ product }: Props) => {
         <div className="flex items-center gap-2">
           <p className="line-through text-gray-500">${product.price}</p>
           <span className="font-black">{product.discount} %</span>
+          <p>normal tag</p>
         </div>
 
         <section>
